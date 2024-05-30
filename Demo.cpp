@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include "EasyRoi.hpp"
 
 using namespace cv;
 using namespace std;
