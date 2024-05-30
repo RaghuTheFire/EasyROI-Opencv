@@ -202,6 +202,21 @@ class EasyROI
       map<int, map<string, int>> draw_cuboid(Mat frame, int quantity=1) 
       {
           // TODO: Implement draw_cuboid
+           if (verbose) 
+          {
+              cout << "[DEBUG] Entered draw_cuboid" << endl;
+          }
+  
+          img = frame.clone();
+          this->quantity = quantity;
+  
+          roi_dict["type"] = "cuboid";
+          roi_dict["roi"] = map<string, int>();
+
+          for (int i = 0; i < this->quantity; i++) 
+          {
+              Rect roi_ = selectROI("Draw " + to_string(this->quantity) + " Cuboid(s)", img, false, false);          
+          }
       }
       /*********************************************************************/
       map<int, map<string, int>> draw_circle(Mat frame, int quantity=1) 
